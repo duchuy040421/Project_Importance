@@ -1,0 +1,5 @@
+﻿  FakeTel.cpp
+  main.cpp
+  Generating Code...
+C:\Users\AD\source\repos\MyLibrary\FakeTel\main.cpp(4,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  FakeTel.vcxproj -> C:\Users\AD\source\repos\MyLibrary\Debug\FakeTel.lib

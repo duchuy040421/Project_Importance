@@ -1,0 +1,3 @@
+﻿Dice.obj : error LNK2019: unresolved external symbol "public: int __cdecl Random::next(int,int)" (?next@Random@@QEAAHHH@Z) referenced in function "public: __cdecl Dice::Dice(void)" (??0Dice@@QEAA@XZ)
+Project_1.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\AD\source\repos\MyLibrary\x64\Debug\Project_2.exe : fatal error LNK1120: 1 unresolved externals

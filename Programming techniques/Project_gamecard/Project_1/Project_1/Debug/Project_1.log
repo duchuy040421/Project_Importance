@@ -1,0 +1,12 @@
+﻿  function.cpp
+C:\Users\AD\Desktop\project_ktlt\Project_1\Project_1\function.cpp(829,8): warning C4101: 'da': unreferenced local variable
+C:\Users\AD\Desktop\project_ktlt\Project_1\Project_1\function.cpp(1114,11): warning C4101: 'pi': unreferenced local variable
+C:\Users\AD\Desktop\project_ktlt\Project_1\Project_1\function.cpp(1705,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\AD\Desktop\project_ktlt\Project_1\Project_1\function.cpp(1879,14): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+  main.cpp
+C:\Users\AD\Desktop\project_ktlt\Project_1\Project_1\function.cpp(1879,17): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\Users\AD\Desktop\project_ktlt\Project_1\Project_1\main.cpp(9,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+C:\Users\AD\Desktop\project_ktlt\Project_1\Project_1\main.cpp(11,26): warning C4101: 'n': unreferenced local variable
+C:\Users\AD\Desktop\project_ktlt\Project_1\Project_1\function.cpp(270): warning C4715: 'getHighestCard': not all control paths return a value
+  Project_1.vcxproj -> C:\Users\AD\Desktop\project_ktlt\Project_1\Debug\Project_1.exe

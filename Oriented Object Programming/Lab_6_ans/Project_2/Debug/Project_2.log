@@ -1,0 +1,7 @@
+﻿  Dice.cpp
+C:\Users\AD\source\repos\MyLibrary\Project_2\Dice.cpp(5,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  main.cpp
+  Generating Code...
+C:\Users\AD\source\repos\MyLibrary\Project_2\Dice.cpp(46,25): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+Project_1.lib(Random.obj) : warning LNK4204: 'C:\Users\AD\source\repos\MyLibrary\Debug\Project_1.pdb' is missing debugging information for referencing module; linking object as if no debug info
+  Project_2.vcxproj -> C:\Users\AD\source\repos\MyLibrary\Debug\Project_2.exe

@@ -1,0 +1,16 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Lab_10.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Ex1.cpp
+C:\Users\AD\source\repos\Lab_10\Lab_10\Ex1.cpp(27,17): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\AD\source\repos\Lab_10\Lab_10\Ex1.cpp(30,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\AD\source\repos\Lab_10\Lab_10\Ex1.cpp(48,12): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+C:\Users\AD\source\repos\Lab_10\Lab_10\Ex1.cpp(51,16): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+C:\Users\AD\source\repos\Lab_10\Lab_10\Ex1.cpp(68,16): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+C:\Users\AD\source\repos\Lab_10\Lab_10\Ex1.cpp(71,16): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+C:\Users\AD\source\repos\Lab_10\Lab_10\Ex1.cpp(87,26): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+C:\Users\AD\source\repos\Lab_10\Lab_10\Ex1.cpp(112,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\AD\source\repos\Lab_10\Lab_10\Ex1.cpp(124,15): warning C4018: '<': signed/unsigned mismatch
+C:\Users\AD\source\repos\Lab_10\Lab_10\Ex1.cpp(132,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\AD\source\repos\Lab_10\Lab_10\Ex1.cpp(139,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\AD\source\repos\Lab_10\Lab_10\Ex1.cpp(201,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\AD\source\repos\Lab_10\Lab_10\Ex1.cpp(207,20): warning C4018: '<': signed/unsigned mismatch
+  Lab_10.vcxproj -> C:\Users\AD\source\repos\Lab_10\Debug\Ex1.exe

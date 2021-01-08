@@ -1,0 +1,5 @@
+﻿  Fake_name.cpp
+  main.cpp
+  Generating Code...
+C:\Users\AD\source\repos\MyLibrary\Fake_name\main.cpp(4,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Fake_name.vcxproj -> C:\Users\AD\source\repos\MyLibrary\Debug\Fake_name.lib

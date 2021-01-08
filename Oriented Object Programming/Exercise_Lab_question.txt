@@ -1,0 +1,28 @@
+Lab 1:https://docs.google.com/document/d/1xcDvA7-RR7n1B1TdmcsVCqYA0fvtDDPGu55TvDY3Uuw/edit
+Lab 2:https://docs.google.com/presentation/d/1dN4tcumAiDWD4kmnPcBqnb9mAgh4227WPrtrsnK8Wg8/edit#slide=id.p
+Lab 4:
+Nhập vào mảng số nguyên theo dạng chuỗi, ví dụ: "12 14 46 27 3 1 90"
+Cho biết:
+1. Tổng các số nguyên vừa nhập
+2. Số nhỏ nhất
+3. 3 số lớn nhất (Ví dụ "3 5 5 5" thì 3 số lớn nhất trong mảng là 5 5 5 
+4. Giá trị trung bình của các số vừa nhập
+5. Cho biết các số nguyên tố trong mảng
+
+Lab 6:https://docs.google.com/presentation/d/1gSzhYddZSG33wD3VpPG05v4BnQ5Ht-yuRBNdI8RnC0M/edit
+Lab 7:
+Thực hiện project:
+1. FakeName
+2. FakeAddress
+3. FakeTel
+4. FakeEmail
+5. Time
+6. Date
+7. FakeBirthday
+
+Lab 8:https://docs.google.com/presentation/d/17yvn5REPpKZYNfx8v3ySgrwO4ZUwT6CCWBD_RHMvZEA/edit#slide=id.p
+Lab 9:
+Phát sinh ngẫu nhiên 30 sinh viên thay vì nhập tay và lưu vào tập tin Database.txt. Tìm ra 5 sinh viên top điểm trung bình để trao học bổng.
+Mỗi sinh viên có các thông tin: MSSV (chuỗi), Họ và tên (chuỗi), Ngày sinh (Date), Địa chỉ (Address), Email (chuỗi), Số điện thoại (chuỗi), Điểm trung bình (Số thực).
+
+Lab 10:https://docs.google.com/presentation/d/1aR2nLshFZQqsbqVR-MPs7KiQyxXtRuvQbZaRyDAl_jU/edit

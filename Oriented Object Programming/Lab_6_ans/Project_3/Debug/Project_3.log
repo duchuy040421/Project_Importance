@@ -1,0 +1,8 @@
+﻿  main.cpp
+  Tokenizer.cpp
+C:\Users\AD\source\repos\MyLibrary\Project_3\Tokenizer.cpp(10,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\AD\source\repos\MyLibrary\Project_3\Tokenizer.cpp(11,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\AD\source\repos\MyLibrary\Project_3\Tokenizer.cpp(56,20): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+C:\Users\AD\source\repos\MyLibrary\Project_3\Tokenizer.cpp(71,20): warning C4018: '<': signed/unsigned mismatch
+  Project_3.vcxproj -> C:\Users\AD\source\repos\MyLibrary\Debug\Project_3.exe

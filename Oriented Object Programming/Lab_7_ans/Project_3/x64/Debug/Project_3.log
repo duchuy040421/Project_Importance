@@ -1,0 +1,9 @@
+﻿  Tokenizer.cpp
+C:\Users\AD\source\repos\MyLibrary\Project_3\Tokenizer.h(25,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\AD\source\repos\MyLibrary\Project_3\Tokenizer.h(29,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\AD\source\repos\MyLibrary\Project_3\Tokenizer.cpp(38,45): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\AD\source\repos\MyLibrary\Project_3\Tokenizer.cpp(41,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\AD\source\repos\MyLibrary\Project_3\Tokenizer.cpp(67,27): warning C4244: 'return': conversion from 'unsigned __int64' to 'float', possible loss of data
+C:\Users\AD\source\repos\MyLibrary\Project_3\Tokenizer.cpp(91,24): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\AD\source\repos\MyLibrary\Project_3\Tokenizer.cpp(106,26): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Project_3.vcxproj -> C:\Users\AD\source\repos\MyLibrary\x64\Debug\Project_3.exe

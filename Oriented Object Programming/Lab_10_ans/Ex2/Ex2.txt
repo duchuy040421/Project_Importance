@@ -1,0 +1,14 @@
+Employee: 13
+Worker employee 82750
+Manager 10553.6
+Worker employee 27000
+Daily employee 3000
+Manager 16050.8
+Manager 7980.06
+Manager 7980.06
+Manager 49099.6
+Worker employee 24000
+Daily employee 3800
+Daily employee 1000
+Worker employee 216000
+Daily employee 2600

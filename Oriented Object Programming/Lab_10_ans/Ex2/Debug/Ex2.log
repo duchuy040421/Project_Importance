@@ -1,0 +1,11 @@
+﻿  Ex2.cpp
+C:\Users\AD\source\repos\Lab_10\Ex2\Ex2.cpp(24,17): warning C4018: '<': signed/unsigned mismatch
+C:\Users\AD\source\repos\Lab_10\Ex2\Ex2.cpp(26,10): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\AD\source\repos\Lab_10\Ex2\Ex2.cpp(41,14): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+C:\Users\AD\source\repos\Lab_10\Ex2\Ex2.cpp(53,29): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\AD\source\repos\Lab_10\Ex2\Ex2.cpp(67,19): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+C:\Users\AD\source\repos\Lab_10\Ex2\Ex2.cpp(69,21): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+C:\Users\AD\source\repos\Lab_10\Ex2\Ex2.cpp(82,19): warning C4018: '<': signed/unsigned mismatch
+C:\Users\AD\source\repos\Lab_10\Ex2\Ex2.cpp(111,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\AD\source\repos\Lab_10\Ex2\Ex2.cpp(118,16): warning C4018: '<': signed/unsigned mismatch
+  Ex2.vcxproj -> C:\Users\AD\source\repos\Lab_10\Debug\Ex2.exe

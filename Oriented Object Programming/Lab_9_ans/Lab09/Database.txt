@@ -1,0 +1,150 @@
+
+ID: E6	Ten: DaoVanCon	Ngay Sinh: 12/9/1936
+Dia chi: 256Ly Chinh ThangPhuong Da KaoQuan 7	Email: TALau@microsoft.com	SDT: 0761071580
+Diem: 5
+
+
+ID: G8	Ten: HaHuuBa	Ngay Sinh: 11/8/1987
+Dia chi: 52Duong Quang HamPhuong Da KaoQuan Tan Binh	Email: TADoai@mac.com	SDT: 0378233755
+Diem: 0
+
+
+ID: Y5	Ten: MaiAnhChan	Ngay Sinh: 14/4/1998
+Dia chi: 256Truong ChinhPhuong Tan DinhQuan 7	Email: TAHy@msn.com	SDT: 0760110338
+Diem: 5
+
+
+ID: V2	Ten: Nguyen Phuoc tocAnhTruoc	Ngay Sinh: 7/10/1917
+Dia chi: 154/10Ly Chinh ThangPhuong Co GiangQuan 1	Email: TAHao@apple.com	SDT: 0334589802
+Diem: 3
+
+
+ID: E6	Ten: CungVanNgo		Ngay Sinh: 5/9/1944
+Dia chi: 256Ly Chinh ThangPhuong Nguyen Thai BinhQuan 7	Email: CHDang@apple.com	SDT: 0929073094
+Diem: 5
+
+
+ID: Z2	Ten: KhuatThiKhang		Ngay Sinh: 16/1/2007
+Dia chi: 5/3/10Ly Chinh ThangPhuong Tan DinhQuan Tan Binh	Email: THTram@att.net	SDT: 0810341936
+Diem: 9
+
+
+ID: Z0	Ten: KhangThiNgo		Ngay Sinh: 24/7/1931
+Dia chi: 154/10Cong HoaPhuong Ben ThanhQuan Tan Binh	Email: NTChieu@att.net	SDT: 0766720926
+Diem: 3
+
+
+ID: F2	Ten: TaAnhBoi	Ngay Sinh: 7/1/2000
+Dia chi: 5/3/10Ly Chinh ThangPhuong Tan DinhQuan 3	Email: NHDinh@microsoft.com	SDT: 0945185061
+Diem: 2
+
+
+ID: D6	Ten: DanVanTru	Ngay Sinh: 9/8/1945
+Dia chi: 52Ly Chinh ThangPhuong Ben ThanhQuan 3	Email: GATru@apple.com	SDT: 0885352957
+Diem: 5
+
+
+ID: C5	Ten: CuDucSac		Ngay Sinh: 5/7/2000
+Dia chi: 154/10Cong HoaPhuong Co GiangQuan 3	Email: LAXuong@yahoo.com	SDT: 0817780473
+Diem: 9
+
+
+ID: A1	Ten: TuThiThan		Ngay Sinh: 2/12/1962
+Dia chi: 52Cong HoaPhuong Nguyen Cu TrinhQuan Binh Tan	Email: TTTuyen@amazon.com	SDT: 0832511353
+Diem: 1
+
+
+ID: G2	Ten: LienThiDam	Ngay Sinh: 1/9/1972
+Dia chi: 52CMT8Phuong Nguyen Thai BinhQuan 3	Email: DHSao@gmail.com	SDT: 0984753554
+Diem: 8
+
+
+ID: H1	Ten: LoVanGia		Ngay Sinh: 28/8/1992
+Dia chi: 154/10Truong ChinhPhuong Co GiangQuan Binh Tan	Email: DTTran@att.net	SDT: 0562809194
+Diem: 1
+
+
+ID: Q4	Ten: HoaThiLuoc		Ngay Sinh: 22/11/1915
+Dia chi: 154/10Truong ChinhPhuong Nguyen Cu TrinhQuan 3	Email: TVTac@vrizon.net	SDT: 0968221809
+Diem: 2
+
+
+ID: T3	Ten: LeVanKhoa		Ngay Sinh: 5/6/100
+Dia chi: 256CMT8Phuong Tan DinhQuan Binh Tan	Email: DDNgoan@mac.com	SDT: 0794119721
+Diem: 6
+
+
+ID: A0	Ten: DuongDucThi		Ngay Sinh: 7/9/1913
+Dia chi: 52Truong ChinhPhuong Nguyen Cu TrinhQuan 7	Email: BTLuoc@gmail.com	SDT: 0825761583
+Diem: 2
+
+
+ID: N1	Ten: DoHuuTrong	Ngay Sinh: 28/5/1916
+Dia chi: 154/10CMT8Phuong Ben ThanhQuan 3	Email: UHDiem@amazon.com	SDT: 0336121984
+Diem: 3
+
+
+ID: L9	Ten: CuHuuNgoa		Ngay Sinh: 13/4/1996
+Dia chi: 52Truong ChinhPhuong Ben NgheQuan 7	Email: CHTruc@apple.com	SDT: 0949820095
+Diem: 3
+
+
+ID: F3	Ten: ManVanTrang	Ngay Sinh: 13/4/1910
+Dia chi: 30/7/10Cong HoaPhuong Tan DinhQuan Binh Tan	Email: CHLap@hotmail	SDT: 0869869263
+Diem: 6
+
+
+ID: P8	Ten: VongVanCo	Ngay Sinh: 3/7/96
+Dia chi: 256Duong Quang HamPhuong Nguyen Thai BinhQuan 3	Email: MTDuong@apple.com	SDT: 0356118721
+Diem: 6
+
+
+ID: B4	Ten: NhamAnhKy		Ngay Sinh: 18/7/1937
+Dia chi: 154/10Ly Chinh ThangPhuong Nguyen Thai BinhQuan Tan Binh	Email: TVNhan@att.net	SDT: 0820356373
+Diem: 4
+
+
+ID: V9	Ten: DoanAnhHat		Ngay Sinh: 17/9/1920
+Dia chi: 5/3/10CMT8Phuong Cau Ong LanhQuan 1	Email: THSanh@amazon.com	SDT: 0340382431
+Diem: 1
+
+
+ID: G6	Ten: AnAnhDam	Ngay Sinh: 17/10/1960
+Dia chi: 154/10Duong Quang HamPhuong Co GiangQuan 7	Email: LTGiai@yahoo.com	SDT: 0586243348
+Diem: 0
+
+
+ID: M7	Ten: LienVanHau		Ngay Sinh: 17/10/1934
+Dia chi: 154/10Duong Quang HamPhuong Nguyen Thai BinhQuan Tan Binh	Email: HAUyen@yahoo.com	SDT: 0588447754
+Diem: 5
+
+
+ID: Y4	Ten: LuongAnhGiam		Ngay Sinh: 8/11/1966
+Dia chi: 154/10Cong HoaPhuong Tan DinhQuan 3	Email: VATot@apple.com	SDT: 0394707562
+Diem: 0
+
+
+ID: U3	Ten: PhamThiTho	Ngay Sinh: 9/12/1913
+Dia chi: 30/7/10Cong HoaPhuong Ben ThanhQuan 3	Email: LTTrai@amazon.com	SDT: 0972762766
+Diem: 6
+
+
+ID: H7	Ten: MieuHuuQuoc	Ngay Sinh: 17/11/1936
+Dia chi: 30/7/10Ly Chinh ThangPhuong Nguyen Cu TrinhQuan 3	Email: NVThong@apple.com	SDT: 0829098940
+Diem: 3
+
+
+ID: C5	Ten: ThachThiKhai		Ngay Sinh: 22/2/1979
+Dia chi: 30/7/10Truong ChinhPhuong Da KaoQuan 7	Email: LTSuong@mac.com	SDT: 0789779226
+Diem: 7
+
+
+ID: F5	Ten: CaiAnhTuoc	Ngay Sinh: 23/1/1984
+Dia chi: 52Cong HoaPhuong Ben ThanhQuan 7	Email: LDNgai@vrizon.net	SDT: 0908322346
+Diem: 1
+
+
+ID: H2	Ten: LamAnhChuc	Ngay Sinh: 28/8/2004
+Dia chi: 5/3/10CMT8Phuong Nguyen Cu TrinhQuan 3	Email: VHSieu@gmail.com	SDT: 0930221884
+Diem: 5
+

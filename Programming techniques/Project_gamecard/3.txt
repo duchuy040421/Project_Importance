@@ -1,0 +1,852 @@
+int** Draw(int deck[SUITS][RANKS], int num, int n) // TRUE
+{
+	int** draw;
+	draw = (int**)malloc(sizeof(int*) * num);
+	for (int i = 0; i < num; i++)
+		draw[i] = (int*)malloc(sizeof(int) * 2);
+	int i = 0; // The first number of recent deck 
+	bool condition = true;
+	for (int card = n * 5 + 1; card < n * 5 + 1 + num; card++)
+	{
+		condition = true;
+		for (int row = 0; row < SUITS; ++row)
+			if (condition)
+				for (int column = 0; column < FACES; ++column)
+					if (deck[row][column] == card)
+					{
+						draw[i][0] = row;
+						draw[i][1] = column;
+						++i;
+						condition = false;
+						break;
+					}
+	}
+	return draw;
+}
+void Menu3()
+{
+	
+	printf("\n(1) Done.");
+	printf("\n(2) Random replacement.");
+	printf("\n(3) Replace to get better situation. ");
+}
+void GameForDealer(int deck[SUITS][RANKS], int n)	// 3*
+{
+	// Dealer is the last player (n)
+	int  num, decide = 0;
+	int*** player;
+	int** da;
+	int* a;
+	a = (int*)malloc(sizeof(int) * (n));
+
+	player = dealingForHands(deck, n);
+
+	for (int i = 0; i < n - 1; i++)
+	{
+		printf("\n\nPlayer %d:", i);
+		printHand(player[i], suits, ranks);
+	}
+	printf("\n\nDealer :");
+	printHand(player[n - 1], suits, ranks);
+	do
+	{
+		printf("\nEnter numbers of card does Dealer want draw (0-3): ");	// draw number card
+		scanf_s("%d", &num);
+	} while (num < 0 || num >3);
+	int** draw = Draw(deck, num, n);
+	printf("\nThe %d draw card: ", num);
+	for (int i = 0; i < num; i++)
+		printf("(%s, %s) ", suits[draw[i][0]], ranks[draw[i][1]]);
+	for (int i = 0; i < num; i++)
+	{
+		player[n - 1][i + 5][0] = draw[i][0];
+		player[n - 1][i + 5][1] = draw[i][1];
+	}
+	Menu3();
+	do
+	{
+			do
+			{
+				printf("\nDealer decide (1-3): ");
+				scanf_s("%d", &decide);
+			} while (decide < 1 || decide>3);
+		switch (decide)
+		{
+		case (2): // random replace		
+			RandomReplace(player[n - 1], num);
+			break;
+		case (3):	// get better situation
+			
+			BetterSituation(player[n - 1], num);		
+			break;
+		}
+	} while (decide != 1 );
+	a = rankingHands(player, n);
+	for (int i = 0; i < n; i++)
+		printf("%d ", a[i]);
+
+}
+void RandomReplace(int** dealer, int num)	//true
+{
+	int number;
+	int a[5];
+	for (int i = 0; i < 5; i++)	// lay random
+		{
+			do
+			{
+				number = rand() % (5 + num);
+			} while (!check(a, number));
+			a[i] = number; 
+		}
+	printf("\n");
+	for (int i = 0; i < 5; i++)
+	{
+		swap(dealer[i][0], dealer[a[i]][0]);
+		swap(dealer[i][1], dealer[a[i]][1]);
+	}
+	printf("\nAfter Random Replace, Card of dealer :\n");
+	for (int i = 0; i < 5; i++)
+		printf("(%s, %s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+}
+bool check(int *b, int number) 	// check for RandomReplace function (de lam CHINH HOP)
+{
+	for (int i = 0; i < 5; i++)
+		if (b[i] == number) return false;
+	return true;
+}
+bool check2(int** a, int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		int dem = 0;
+		for (int j = 0; j < 5; j++)
+			if (a[i][j] == a[n][j])
+				dem++;
+		if (dem == 5) return false;
+	}
+	return true;
+}
+void BetterSituation(int** dealer, int num)
+{
+	int temp[8][2], a[8], b[8], cc[8],d[8];	// a,b,o cho rank _ cc,d,e cho suits
+	int rank[] = { 12, 13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };	//ranks
+	int suit[] = { 4, 3, 2, 1 };									//suits
+	int o=0, e=0, numpair2 = 0, numpair3 = 0, numpair4 = 0, numpair5 = 0, suit5=0;
+	for (int i = 0; i < 5 + num; i++)
+	{
+		temp[i][0] = dealer[i][0];
+		temp[i][1] = dealer[i][1];
+	}
+	// dem xem bao nhieu cung rank:
+	for (int i = 0; i < 5 + num; i++)
+	{
+		int dem = 0;
+		if (dealer[i][1] != -1)
+		{
+			for (int j = i + 1; j < 5 + num; j++)
+				if (dealer[i][1] == dealer[j][1])
+				{
+					dem++;
+					dealer[j][1] = -1;
+				}
+			a[o] = dem+1;
+			b[o] = dealer[i][1];
+			o++;
+		}
+	}
+	for (int i = 0; i < 5 + num; i++)
+	{
+		dealer[i][0] = temp[i][0];
+		dealer[i][1] = temp[i][1];
+	}
+	// dem xem bao nhieu cung suit:
+	for (int i = 0; i < 5 + num; i++)
+	{
+		int dem = 0;
+		if (dealer[i][0] != -1)
+		{
+			for (int j = i + 1; j < 5 + num; j++)
+				if (dealer[i][0] == dealer[j][0])
+				{
+					dem++;
+					dealer[j][0] = -1;
+				}
+			cc[e] = dem + 1;
+			d[e] = dealer[i][0];
+			e++;
+		}
+	}
+	for (int i = 0; i < e; i++)
+	{
+		if (cc[i] == 5) suit5++;
+	}
+	for (int i = 0; i < 5 + num; i++)
+	{
+		dealer[i][0] = temp[i][0];
+		dealer[i][1] = temp[i][1];
+	}
+	for (int i = 0; i < o; i++)
+	{
+		if (a[i] == 2) numpair2++;
+		else if (a[i] == 3) numpair3++;
+		else if (a[i] == 4) numpair4++;
+		else if (a[i] == 5) numpair5++;
+	}
+	int mark = getStatusOfHand(dealer);
+	switch (mark)
+	{
+	case (0):
+		// 1 pair2 (day len 1d)
+		if (numpair2 != 0)
+		{
+			int j, c = 0;
+			for (j = 0; j < o; j++)
+				if (a[j] == 2)
+					break;
+
+			for (int i = 0; i < 5 + num; i++)
+			{
+				if (c == 2) break;
+				if (dealer[i][1] == b[j])
+				{
+
+					swap(dealer[i][1], dealer[c][1]);
+					swap(dealer[i][0], dealer[c][0]);
+					c++;
+				}
+			}
+			for (int i = 0; i < 5 + num; i++)
+			{
+				if (c == 5) break;
+				if (dealer[i][1] != b[j])
+				{
+					swap(dealer[i][1], dealer[c][1]);
+					swap(dealer[i][0], dealer[c][0]);
+					c++;
+				}
+			}
+			printf("Better Sittuation: ");
+			for (int i = 0; i < 5; i++)
+				printf("(% s, % s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+		}
+		else
+		// 1 pair3 (day len 3d)
+		if (numpair3 != 0)
+			{
+				int j, c = 0;
+				for (j = 0; j < o; j++)
+					if (a[j] == 3)	break;
+				for (int i = 0; i < 5 + num; i++)
+				{
+					if (c == 3) break;
+					if (dealer[i][1] == b[j])
+					{
+
+						swap(dealer[i][1], dealer[c][1]);
+						swap(dealer[i][0], dealer[c][0]);
+						c++;
+					}
+				}
+				for (int i = 0; i < 5 + num; i++)
+				{
+					if (c == 5) break;
+					if (dealer[i][1] != b[j])
+					{
+						swap(dealer[i][1], dealer[c][1]);
+						swap(dealer[i][0], dealer[c][0]);
+						c++;
+					}
+				}
+				printf("Better Sittuation: ");
+				for (int i = 0; i < 5; i++)
+					printf("(% s, % s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+			}
+		else
+		// flush (day len 5)
+		if (suit5 != 0)
+		{
+			int j, c = 0;
+			for (j = 0; j < e; j++)
+				if (cc[j] == 5)
+					break;
+			for (int i = 0; i < 5 + num; i++)
+				{
+					if (c == 5) break;
+					if (dealer[i][0] == d[j])
+					{
+						swap(dealer[i][1], dealer[c][1]);
+						swap(dealer[i][0], dealer[c][0]);
+						c++;
+					}
+				}
+			printf("Better Sittuation: ");
+			for (int i = 0; i < 5; i++)
+				printf("(% s, % s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+		}
+		else
+		//1 pair4 (day len 7d)
+		if (numpair4 != 0)
+			{
+				int j, c = 0;
+				for (j = 0; j < o; j++)
+					if (a[j] == 4)
+						break;
+				for (int i = 0; i < 5 + num; i++)
+				{
+					if (c == 4) break;
+					if (dealer[i][1] == b[j])
+					{
+
+						swap(dealer[i][1], dealer[c][1]);
+						swap(dealer[i][0], dealer[c][0]);
+						c++;
+					}
+				}
+				for (int i = 0; i < 5 + num; i++)
+				{
+					if (c == 5) break;
+					if (dealer[i][1] != b[j])
+					{
+						swap(dealer[i][1], dealer[c][1]);
+						swap(dealer[i][0], dealer[c][0]);
+						c++;
+					}
+				}
+				printf("Better Sittuation: ");
+				for (int i = 0; i < 5; i++)
+					printf("(% s, % s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+			}
+		// swap max and min (van giu 0d)
+		else
+		{
+
+			int pi[5];
+			int MaxRank = rank[dealer[5][1]];
+			int MinRank = rank[dealer[0][1]];
+			// find Max Rank
+			for (int i = 5; i < 5+num; i++)
+				if (rank[dealer[i][1]] > MaxRank) MaxRank = rank[dealer[i][1]];
+			for (int i = 1; i < 5; i++)
+				if (rank[dealer[i][1]] < MinRank) MinRank = rank[dealer[i][1]];
+			for (int i = 0; i < 5; i++)
+				for (int j = 5; j < 5 + num; j++)
+					if (rank[dealer[i][1]] == MinRank && rank[dealer[j][1]] == MaxRank && MaxRank>MinRank) 
+					{
+						swap(dealer[i][1], dealer[j][1]);
+						swap(dealer[i][0], dealer[j][0]);
+					}
+			printf("Better Sittuation: ");
+			for (int i = 0; i < 5; i++)
+				printf("(% s, % s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+		}
+
+		break;
+	case (1):
+		// 2 pair2 ( day len 2)
+		if (numpair2 >= 2)
+		{
+			int j, k, c = 0;
+			for (j = 0; j < o; j++)
+				if (a[j] == 2)
+					break;
+
+			for (int i = 0; i < 5 + num; i++)
+			{
+				if (c == 2) break;
+				if (dealer[i][1] == b[j])
+				{
+
+					swap(dealer[i][1], dealer[c][1]);
+					swap(dealer[i][0], dealer[c][0]);
+					c++;
+				}
+			}
+			for (k = 0; k < o; k++)
+				if (a[k] == 2 && k !=j)
+					break;
+			for (int i = 0; i < 5 + num; i++)
+			{
+				if (c == 4) break;
+				if (dealer[i][1] == b[k])
+				{
+					swap(dealer[i][1], dealer[c][1]);
+					swap(dealer[i][0], dealer[c][0]);
+					c++;
+				}
+			}
+			for (int i = 0; i < 5 + num; i++)
+			{
+				if (c == 5) break;
+				if (dealer[i][1] != b[k] && dealer[i][1] != b[j])
+				{
+					swap(dealer[i][1], dealer[c][1]);
+					swap(dealer[i][0], dealer[c][0]);
+					c++;
+				}
+			}
+			printf("Better Sittuation: ");
+			for (int i = 0; i < 5; i++)
+				printf("(% s, % s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+		}
+		else
+		// day len 3
+		if (numpair3 != 0)
+		{
+			int j, c = 0;
+			for (j = 0; j < o; j++)
+				if (a[j] == 3)
+					break;
+			for (int i = 0; i < 5 + num; i++)
+			{
+				if (c == 3) break;
+				if (dealer[i][1] == b[j])
+				{
+
+					swap(dealer[i][1], dealer[c][1]);
+					swap(dealer[i][0], dealer[c][0]);
+					c++;
+				}
+			}
+			for (int i = 0; i < 5 + num; i++)
+			{
+				if (c == 5) break;
+				if (dealer[i][1] != b[j])
+				{
+					swap(dealer[i][1], dealer[c][1]);
+					swap(dealer[i][0], dealer[c][0]);
+					c++;
+				}
+			}
+			printf("Better Sittuation: ");
+			for (int i = 0; i < 5; i++)
+				printf("(% s, % s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+		}
+		else
+		// flush (day len 5)
+		if (suit5 != 0)
+			{
+				int j, c = 0;
+				for (j = 0; j < e; j++)
+					if (cc[j] == 5)
+						break;
+				for (int i = 0; i < 5 + num; i++)
+				{
+					if (c == 5) break;
+					if (dealer[i][0] == d[j])
+					{
+						swap(dealer[i][1], dealer[c][1]);
+						swap(dealer[i][0], dealer[c][0]);
+						c++;
+					}
+				}
+				printf("Better Sittuation: ");
+				for (int i = 0; i < 5; i++)
+					printf("(% s, % s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+			}
+		else
+		// full house (day len 6d)
+		if (numpair2 != 0 && numpair3 != 0)
+			{
+				int j, k, c = 0;
+				for (j = 0; j < o; j++)
+					if (a[j] == 2)
+						break;
+
+				for (int i = 0; i < 5 + num; i++)
+				{
+					if (c == 2) break;
+					if (dealer[i][1] == b[j])
+					{
+
+						swap(dealer[i][1], dealer[c][1]);
+						swap(dealer[i][0], dealer[c][0]);
+						c++;
+					}
+				}
+				for (k = 0; k < o; k++)
+					if (a[k] == 3 && k != j)
+						break;
+				for (int i = 0; i < 5 + num; i++)
+				{
+					if (c == 5) break;
+					if (dealer[i][1] == b[k])
+					{
+						swap(dealer[i][1], dealer[c][1]);
+						swap(dealer[i][0], dealer[c][0]);
+						c++;
+					}
+				}
+				printf("Better Sittuation: ");
+				for (int i = 0; i < 5; i++)
+					printf("(% s, % s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+			}
+		else
+		//1 pair4 (day len 7d)
+		if (numpair4 != 0)
+			{
+				int j, c = 0;
+				for (j = 0; j < o; j++)
+					if (a[j] == 4)
+						break;
+				for (int i = 0; i < 5 + num; i++)
+				{
+					if (c == 4) break;
+					if (dealer[i][1] == b[j])
+					{
+
+						swap(dealer[i][1], dealer[c][1]);
+						swap(dealer[i][0], dealer[c][0]);
+						c++;
+					}
+				}
+				for (int i = 0; i < 5 + num; i++)
+				{
+					if (c == 5) break;
+					if (dealer[i][1] != b[j])
+					{
+						swap(dealer[i][1], dealer[c][1]);
+						swap(dealer[i][0], dealer[c][0]);
+						c++;
+					}
+				}
+				printf("Better Sittuation: ");
+				for (int i = 0; i < 5; i++)
+					printf("(% s, % s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+			}
+		else
+		printf("That is the best case.");
+		break;
+	case(2):
+		// day len 3d
+		if (numpair3 != 0)
+		{
+			int j, c = 0;
+			for (j = 0; j < o; j++)
+				if (a[j] == 3)
+					break;
+			for (int i = 0; i < 5 + num; i++)
+			{
+				if (c == 3) break;
+				if (dealer[i][1] == b[j])
+				{
+
+					swap(dealer[i][1], dealer[c][1]);
+					swap(dealer[i][0], dealer[c][0]);
+					c++;
+				}
+			}
+			for (int i = 0; i < 5 + num; i++)
+			{
+				if (c == 5) break;
+				if (dealer[i][1] != b[j])
+				{
+					swap(dealer[i][1], dealer[c][1]);
+					swap(dealer[i][0], dealer[c][0]);
+					c++;
+				}
+			}
+			printf("Better Sittuation: ");
+			for (int i = 0; i < 5; i++)
+				printf("(% s, % s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+		}
+		else
+		// flush (day len 5)
+		if (suit5 != 0)
+			{
+				int j, c = 0;
+				for (j = 0; j < e; j++)
+					if (cc[j] == 5)
+						break;
+				for (int i = 0; i < 5 + num; i++)
+				{
+					if (c == 5) break;
+					if (dealer[i][0] == d[j])
+					{
+						swap(dealer[i][1], dealer[c][1]);
+						swap(dealer[i][0], dealer[c][0]);
+						c++;
+					}
+				}
+				printf("Better Sittuation: ");
+				for (int i = 0; i < 5; i++)
+					printf("(% s, % s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+			}
+		else
+		// full house (day len 6d)
+		if (numpair2 != 0 && numpair3 != 0)
+			{
+				int j, k, c = 0;
+				for (j = 0; j < o; j++)
+					if (a[j] == 2)
+						break;
+
+				for (int i = 0; i < 5 + num; i++)
+				{
+					if (c == 2) break;
+					if (dealer[i][1] == b[j])
+					{
+
+						swap(dealer[i][1], dealer[c][1]);
+						swap(dealer[i][0], dealer[c][0]);
+						c++;
+					}
+				}
+				for (k = 0; k < o; k++)
+					if (a[k] == 3 && k != j)
+						break;
+				for (int i = 0; i < 5 + num; i++)
+				{
+					if (c == 5) break;
+					if (dealer[i][1] == b[k])
+					{
+						swap(dealer[i][1], dealer[c][1]);
+						swap(dealer[i][0], dealer[c][0]);
+						c++;
+					}
+				}
+				printf("Better Sittuation: ");
+				for (int i = 0; i < 5; i++)
+					printf("(% s, % s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+			}
+		else
+		// day len 7d
+		if (numpair4 != 0)
+			{
+				int j, c = 0;
+				for (j = 0; j < o; j++)
+					if (a[j] == 4)
+						break;
+				for (int i = 0; i < 5 + num; i++)
+				{
+					if (c == 4) break;
+					if (dealer[i][1] == b[j])
+					{
+
+						swap(dealer[i][1], dealer[c][1]);
+						swap(dealer[i][0], dealer[c][0]);
+						c++;
+					}
+				}
+				for (int i = 0; i < 5 + num; i++)
+				{
+					if (c == 5) break;
+					if (dealer[i][1] != b[j])
+					{
+						swap(dealer[i][1], dealer[c][1]);
+						swap(dealer[i][0], dealer[c][0]);
+						c++;
+					}
+				}
+				printf("Better Sittuation: ");
+				for (int i = 0; i < 5; i++)
+					printf("(% s, % s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+			}
+		else
+		printf("That is the best case.");
+		break;
+	//---------------
+	case (3):
+		// flush (day len 5)
+		if (suit5 != 0)
+		{
+			int j, c = 0;
+			for (j = 0; j < e; j++)
+				if (cc[j] == 5)
+					break;
+			for (int i = 0; i < 5 + num; i++)
+			{
+				if (c == 5) break;
+				if (dealer[i][0] == d[j])
+				{
+					swap(dealer[i][1], dealer[c][1]);
+					swap(dealer[i][0], dealer[c][0]);
+					c++;
+				}
+			}
+			printf("Better Sittuation: ");
+			for (int i = 0; i < 5; i++)
+				printf("(% s, % s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+		}
+		else
+		// full house (day len 6d)
+		if (numpair2 != 0 && numpair3 != 0)
+			{
+				int j, k, c = 0;
+				for (j = 0; j < o; j++)
+					if (a[j] == 2)
+						break;
+
+				for (int i = 0; i < 5 + num; i++)
+				{
+					if (c == 2) break;
+					if (dealer[i][1] == b[j])
+					{
+
+						swap(dealer[i][1], dealer[c][1]);
+						swap(dealer[i][0], dealer[c][0]);
+						c++;
+					}
+				}
+				for (k = 0; k < o; k++)
+					if (a[k] == 3 && k != j)
+						break;
+				for (int i = 0; i < 5 + num; i++)
+				{
+					if (c == 5) break;
+					if (dealer[i][1] == b[k])
+					{
+						swap(dealer[i][1], dealer[c][1]);
+						swap(dealer[i][0], dealer[c][0]);
+						c++;
+					}
+				}
+				printf("Better Sittuation: ");
+				for (int i = 0; i < 5; i++)
+					printf("(% s, % s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+			}
+		else
+		// day len 7d
+		if (numpair4 != 0)
+		{
+			int j, c = 0;
+			for (j = 0; j < o; j++)
+				if (a[j] == 4)
+					break;
+			for (int i = 0; i < 5 + num; i++)
+			{
+				if (c == 4) break;
+				if (dealer[i][1] == b[j])
+				{
+
+					swap(dealer[i][1], dealer[c][1]);
+					swap(dealer[i][0], dealer[c][0]);
+					c++;
+				}
+			}
+			for (int i = 0; i < 5 + num; i++)
+			{
+				if (c == 5) break;
+				if (dealer[i][1] != b[j])
+				{
+					swap(dealer[i][1], dealer[c][1]);
+					swap(dealer[i][0], dealer[c][0]);
+					c++;
+				}
+			}
+			printf("Better Sittuation: ");
+			for (int i = 0; i < 5; i++)
+				printf("(% s, % s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+		}
+		else
+		printf("That is the best case.");
+		break;
+	case (5):
+		// full house (day len 6d)
+		if (numpair2 != 0 && numpair3 != 0)
+		{
+			int j, k, c = 0;
+			for (j = 0; j < o; j++)
+				if (a[j] == 2)
+					break;
+			for (int i = 0; i < 5 + num; i++)
+			{
+				if (c == 2) break;
+				if (dealer[i][1] == b[j])
+				{
+
+					swap(dealer[i][1], dealer[c][1]);
+					swap(dealer[i][0], dealer[c][0]);
+					c++;
+				}
+			}
+			for (k = 0; k < o; k++)
+				if (a[k] == 3 && k != j)
+					break;
+			for (int i = 0; i < 5 + num; i++)
+			{
+				if (c == 5) break;
+				if (dealer[i][1] == b[k])
+				{
+					swap(dealer[i][1], dealer[c][1]);
+					swap(dealer[i][0], dealer[c][0]);
+					c++;
+				}
+			}
+			printf("Better Sittuation: ");
+			for (int i = 0; i < 5; i++)
+				printf("(% s, % s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+		}
+		else
+			//1 pair4 (day len 7d)
+		if (numpair4 != 0)
+			{
+				int j, c = 0;
+				for (j = 0; j < o; j++)
+					if (a[j] == 4)
+						break;
+				for (int i = 0; i < 5 + num; i++)
+				{
+					if (c == 4) break;
+					if (dealer[i][1] == b[j])
+					{
+
+						swap(dealer[i][1], dealer[c][1]);
+						swap(dealer[i][0], dealer[c][0]);
+						c++;
+					}
+				}
+				for (int i = 0; i < 5 + num; i++)
+				{
+					if (c == 5) break;
+					if (dealer[i][1] != b[j])
+					{
+						swap(dealer[i][1], dealer[c][1]);
+						swap(dealer[i][0], dealer[c][0]);
+						c++;
+					}
+				}
+				printf("Better Sittuation: ");
+				for (int i = 0; i < 5; i++)
+					printf("(% s, % s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+			}
+		else
+		printf("That is the best case.");
+		break;
+	case (6):
+		//1 pair4 (day len 7d)
+		if (numpair4 != 0)
+		{
+			int j, c = 0;
+			for (j = 0; j < o; j++)
+				if (a[j] == 4)
+					break;
+			for (int i = 0; i < 5 + num; i++)
+			{
+				if (c == 4) break;
+				if (dealer[i][1] == b[j])
+				{
+
+					swap(dealer[i][1], dealer[c][1]);
+					swap(dealer[i][0], dealer[c][0]);
+					c++;
+				}
+			}
+			for (int i = 0; i < 5 + num; i++)
+			{
+				if (c == 5) break;
+				if (dealer[i][1] != b[j])
+				{
+					swap(dealer[i][1], dealer[c][1]);
+					swap(dealer[i][0], dealer[c][0]);
+					c++;
+				}
+			}
+			printf("Better Sittuation: ");
+			for (int i = 0; i < 5; i++)
+				printf("(% s, % s)  ", suits[dealer[i][0]], ranks[dealer[i][1]]);
+		}
+		else
+		printf("That is the best case.");
+		break;
+	}
+}

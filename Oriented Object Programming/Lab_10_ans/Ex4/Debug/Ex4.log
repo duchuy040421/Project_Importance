@@ -1,0 +1,7 @@
+﻿  Ex4.cpp
+C:\Users\AD\source\repos\Lab_10\Ex4\Ex4.cpp(17,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\AD\source\repos\Lab_10\Ex4\Ex4.cpp(35,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\AD\source\repos\Lab_10\Ex4\Ex4.cpp(50,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\AD\source\repos\Lab_10\Ex4\Ex4.cpp(65,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\AD\source\repos\Lab_10\Ex4\Ex4.cpp(122,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Ex4.vcxproj -> C:\Users\AD\source\repos\Lab_10\Debug\Ex4.exe

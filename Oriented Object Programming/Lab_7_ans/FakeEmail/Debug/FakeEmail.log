@@ -1,0 +1,3 @@
+﻿  FakeEmail.cpp
+C:\Users\AD\source\repos\MyLibrary\FakeEmail\FakeEmail.cpp(6,20): warning C4018: '<': signed/unsigned mismatch
+  FakeEmail.vcxproj -> C:\Users\AD\source\repos\MyLibrary\Debug\FakeEmail.exe

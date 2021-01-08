@@ -1,0 +1,6 @@
+﻿  FakeEmail.cpp
+  main.cpp
+C:\Users\AD\source\repos\MyLibrary\FakeEmail\FakeEmail.cpp(6,20): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+C:\Users\AD\source\repos\MyLibrary\FakeEmail\main.cpp(4,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  FakeEmail.vcxproj -> C:\Users\AD\source\repos\MyLibrary\Debug\FakeEmail.lib

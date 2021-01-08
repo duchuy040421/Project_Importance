@@ -1,0 +1,5 @@
+﻿  Function.cpp
+  main.cpp
+  Generating Code...
+C:\Users\AD\source\repos\MyLibrary\Project_4\Function.cpp(7,20): warning C4018: '<': signed/unsigned mismatch
+  Project_4.vcxproj -> C:\Users\AD\source\repos\MyLibrary\Debug\Project_4.exe

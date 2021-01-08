@@ -1,0 +1,15 @@
+14
+Rectangle a=16 b=20
+Circle r=14
+Rectangle a=13 b=10
+Circle r=11
+Rectangle a=13 b=16
+Triangle a=11 b=17 c=20
+Rectangle a=15 b=15
+Rectangle a=16 b=16
+Square a=11
+Triangle a=17 b=13 c=17
+Triangle a=17 b=16 c=20
+Square a=17
+Rectangle a=10 b=13
+Triangle a=19 b=19 c=16
